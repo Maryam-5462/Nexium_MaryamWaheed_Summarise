@@ -1,13 +1,15 @@
 'use client';
-
 export const dynamic = 'force-dynamic';
 
+import { getSupabase } from '@/lib/supabase';
+
+const supabase = getSupabase(); // runs only in client, not at build time
 import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { translateToUrdu } from './utils/translateToUrdu';
-import { supabase } from "@/lib/supabase";
+// import { supabase } from "@/lib/supabase";
 
 export default function BlogSummariserPage() {
   const [url, setUrl] = useState('');
